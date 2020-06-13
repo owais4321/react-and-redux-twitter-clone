@@ -5,10 +5,10 @@ import { setAuthedUser } from "./autheduser";
 const AUTHED_ID = "tylermcginnis";
 export function handleInitialData() {
   return (dispatch) => {
-    return getInitialData().then((users, tweets) => {
+    return getInitialData().then(({ users, tweets }) => {
       dispatch(recieveTweets(tweets));
       dispatch(recieveUsers(users));
-      dispatch(setAuthedUser(SET_AUTHED_ID));
+      dispatch(setAuthedUser(AUTHED_ID));
     });
   };
 }
